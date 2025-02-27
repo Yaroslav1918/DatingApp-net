@@ -17,6 +17,7 @@ namespace API.Extensions
                 opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<LogUserActivity>();
             services.AddScoped<IPhotoService, PhotoService>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));

@@ -20,7 +20,8 @@ namespace API.Enteties
         public required string City { get; set; }
         public required string Country { get; set; }
         public List<Photo> Photos { get; set; } = [];
-         public int GetAge() {
+        public required DateTime LastActive { get; set; }
+        public int GetAge() {
             return DateOfBirth.CalculateAge();
          }
     }
