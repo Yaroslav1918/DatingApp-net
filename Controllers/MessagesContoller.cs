@@ -21,8 +21,6 @@ namespace API.Controllers
             {
                 return BadRequest("You cannot message yourself");
             }
-            System.Console.WriteLine($"Received RecipientUsername: {createMessageDto.RecipientUsername}");
-            System.Console.WriteLine($" username: {username}");
             var sender = await userRepository.GetUserByUserNameAsync(username);
             var recipient = await userRepository.GetUserByUserNameAsync(createMessageDto.RecipientUsername);
             if (recipient == null || sender == null || sender.UserName == null
