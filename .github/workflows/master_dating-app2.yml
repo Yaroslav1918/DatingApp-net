@@ -25,7 +25,7 @@ jobs:
         run: npm install -g @angular/cli@19
       - name: Install deps and build angular app
         run: |
-          cd client
+          cd ../client
           npm install 
           ng build 
       - name: Set up .NET Core
