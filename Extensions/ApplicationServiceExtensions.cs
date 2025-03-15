@@ -15,7 +15,7 @@ namespace API.Extensions
            services.AddScoped<ITokenService, TokenService>();
            services.AddDbContext<DataContext>(opt =>
             {
-                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<LogUserActivity>();

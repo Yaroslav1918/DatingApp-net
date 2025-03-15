@@ -24,7 +24,7 @@ namespace API.Data
             builder.Entity<AppRole>()
             .HasMany(ur => ur.UserRoles)
             .WithOne(u => u.Role)
-            .HasForeignKey(ur => ur.UserId)
+            .HasForeignKey(ur => ur.RoleId)
             .IsRequired();
 
             builder.Entity<UserLike>()
@@ -40,7 +40,7 @@ namespace API.Data
            .HasOne(s => s.TargetUser)
            .WithMany(l => l.LikedByUsers)
            .HasForeignKey(s => s.TargetUserId)
-           .OnDelete(DeleteBehavior.Cascade);
+           .OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<Message>()
            .HasOne(x => x.Recipient)
